@@ -8,6 +8,5 @@ SOURCES += \
 
 TARGET = ../build/sqlitefunctions
 
-#include(deployment.pri)
-#qtcAddDeployment()
+INCLUDEPATH += ../3rdparty/sqlite/
 

@@ -34,7 +34,7 @@ SkyView::SkyView(QWidget* parent)
                      query.value(3).toFloat(),
                      query.value(4).toInt()));
 //            qDebug() << stars.last().toString();
-            scene.addEllipse()
+//            scene.addEllipse()
         }
 
     } else {
