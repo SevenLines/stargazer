@@ -24,6 +24,8 @@ SkyView::SkyView(QWidget* parent)
         }
 
         QSqlQuery query("SELECT name, Dec, RA, mag, id from Stars");
+        scene.clear();
+        
         while (query.next()) {
             stars.push_back(
                 Star(query.value(0).toString(),
@@ -31,7 +33,8 @@ SkyView::SkyView(QWidget* parent)
                      query.value(2).toFloat(),
                      query.value(3).toFloat(),
                      query.value(4).toInt()));
-            qDebug() << stars.last().toString();
+//            qDebug() << stars.last().toString();
+            scene.addEllipse()
         }
 
     } else {

@@ -1,5 +1,5 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    stargazer-gui \
+    gui \
     sqlitefunctions
