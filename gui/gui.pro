@@ -5,33 +5,44 @@
 #-------------------------------------------------
 
 QT       += core gui sql
+CONFIG += c++11
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = stargazer-gui
 TEMPLATE = app
 
-assets.files += assets/GenStar.sqlite
+assets.files += assets/*
 assets.path += $$OUT_PWD/../build/assets
+INSTALLS += assets
 
-INSTALLS += target
+sql_assets.files += sql/*
+sql_assets.path += $$OUT_PWD/../build/sql
+INSTALLS += sql_assets
+
 
 TARGET = ../build/stargazer
-
-INSTALLS += assets
+win32: {
+    TARGET = ../$$TARGET
+}
 
 SOURCES += main.cpp\
         mainwindow.cpp \
         star.cpp \
         skyview.cpp \
-        sky.cpp
+        sky.cpp \
+    qstaritem.cpp
 
 HEADERS  += mainwindow.h \
             star.h \
             skyview.h \
-            sky.h
+            sky.h \
+    qstaritem.h
 
 FORMS    += mainwindow.ui
 
 DISTFILES += \
-    assets/GenStar.sqlite
+    assets/GenStar.sqlite \
+    sql/ortogonal.sql \
+    sql/load_extension.sql \
+    sql/stars.sql \
+    sql/edges.sql

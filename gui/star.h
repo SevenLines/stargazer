@@ -7,12 +7,16 @@ class Star
 {
 public:
     int id;
-    float Dec;
-    float RA;
-    float Mag;
+    qreal x;
+    qreal y;
+
+    qreal Dec;
+    qreal RA;
+    qreal Mag;
     QString Name;
     QString Name_rus;
-    Star(QString name, float Dec, float RA, float Mag, int id);
+    Star();
+    Star(QString name, qreal Dec, qreal RA, qreal Mag, int id);
 
     QString toString();
 };

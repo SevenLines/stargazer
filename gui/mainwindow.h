@@ -1,6 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "sky.h"
+
 #include <QMainWindow>
 
 namespace Ui {
@@ -15,7 +17,13 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void updateCenterStar();
+
 private:
+    Sky sky;
+    int lastRA;
+    int lastDec;
     Ui::MainWindow *ui;
 };
 

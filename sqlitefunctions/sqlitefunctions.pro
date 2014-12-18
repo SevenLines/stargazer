@@ -8,5 +8,10 @@ SOURCES += \
 
 TARGET = ../build/sqlitefunctions
 
+win32: {
+    TARGET = ../build/libsqlitefunctions
+    TARGET = ../$$TARGET
+}
+
 INCLUDEPATH += ../3rdparty/sqlite/
 

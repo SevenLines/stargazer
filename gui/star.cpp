@@ -1,6 +1,11 @@
 #include "star.h"
 
-Star::Star(QString name, float Dec, float RA, float Mag, int id)
+Star::Star() :
+    Star("", 0, 0, 1, -1)
+{
+}
+
+Star::Star(QString name, qreal Dec, qreal RA, qreal Mag, int id)
 {
     this->Dec = Dec;
     this->Mag = Mag;
